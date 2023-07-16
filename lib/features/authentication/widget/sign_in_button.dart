@@ -17,7 +17,7 @@ class SignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        horizontal: 51,
+        horizontal: 27,
       ),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(

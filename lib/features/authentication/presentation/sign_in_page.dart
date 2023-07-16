@@ -57,7 +57,7 @@ class SignInPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(
                   vertical: 24,
-                  horizontal: 51,
+                  horizontal: 27,
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +90,7 @@ class SignInPage extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 51,
+                  horizontal: 27,
                 ),
                 child: Row(
                   children: [
@@ -141,8 +141,8 @@ class SignInPage extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(
                   top: 32,
-                  left: 51,
-                  right: 51,
+                  left: 27,
+                  right: 27,
                 ),
                 child: RichText(
                   text: TextSpan(
