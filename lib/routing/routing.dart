@@ -1,11 +1,16 @@
 import 'package:go_router/go_router.dart';
 
 import '../app/application/presentation/bottom_nav_scaffold.dart';
+import '../features/authentication/presentation/sign_in_page.dart';
 import '../home.dart';
 
 final GoRouter router = GoRouter(
-  initialLocation: '/home',
+  initialLocation: '/sign-up',
   routes: [
+    GoRoute(
+      path: '/sign-up',
+      builder: (context, state) => const SignInPage(),
+    ),
     StatefulShellRoute.indexedStack(
       builder: (context, state, navigationShell) => BottomNavScaffold(
         navigationShell: navigationShell,
