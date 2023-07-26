@@ -1,3 +1,4 @@
+import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -61,66 +62,53 @@ class _NewsCardState extends ConsumerState<NewsCard> {
           Padding(
             padding: const EdgeInsets.only(
               top: 16,
+              right: 24,
+              bottom: 24,
               left: 24,
-              right: 16,
             ),
             child: Stack(
               alignment: Alignment.bottomCenter,
               children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(
-                        right: 16,
-                      ),
-                      child: SizedBox(
-                        height: 20,
-                        child: VerticalDivider(
-                          color: Color(0xFFC1FD33),
-                          thickness: 1,
+                DecoratedBox(
+                  decoration: DottedDecoration(
+                    color: const Color(0xFFD6D6D6),
+                    linePosition: LinePosition.left,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: 24,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          'at a glance',
+                          style: plusJakartaSansSemiBold14,
                         ),
-                      ),
-                    ),
-                    Flexible(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'at a glance',
-                            style: plusJakartaSansSemiBold14,
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 16,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(
-                              top: 16,
-                            ),
-                            child: Text(
-                              '1 Empress, a powerful DRM cracker, has gained fame for liberating high-profile games from digital rights management software like Denuvo. She sees DRM as a limitation on true ownership and believes preserving games should not be considered a crime.',
-                              style: plusJakartaSansRegular14,
-                            ),
+                          child: Text(
+                            '1 Empress, a powerful DRM cracker, has gained fame for liberating high-profile games from digital rights management software like Denuvo. She sees DRM as a limitation on true ownership and believes preserving games should not be considered a crime.',
+                            style: plusJakartaSansRegular14,
                           ),
-                          !showOverlay
-                              ? Column(
-                                  children: [
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                        top: 16,
-                                      ),
-                                      child: Text(
-                                        'Empress, a powerful DRM cracker, has gained fame for liberating high-profile games from digital rights management software like Denuvo. She sees DRM as a limitation on true ownership and believes preserving games should not be considered a crime.\n\nEmpress, a powerful DRM cracker, has gained fame for liberating high-profile games from digital rights management software like Denuvo. She sees DRM as a limitation on true ownership and believes preserving games should not be considered a crime.\n\nEmpress, a powerful DRM cracker, has gained fame for liberating high-profile games from digital rights management software like Denuvo. She sees DRM as a limitation on true ownership and believes preserving games should not be considered a crime.',
-                                        style: plusJakartaSansRegular14,
-                                      ),
-                                    ),
-                                    const SizedBox(
-                                      height: 24,
-                                    ),
-                                  ],
-                                )
-                              : const SizedBox.shrink(),
-                        ],
-                      ),
+                        ),
+                        !showOverlay
+                            ? Padding(
+                                padding: const EdgeInsets.only(
+                                  top: 16,
+                                  bottom: 24,
+                                ),
+                                child: Text(
+                                  'Empress, a powerful DRM cracker, has gained fame for liberating high-profile games from digital rights management software like Denuvo. She sees DRM as a limitation on true ownership and believes preserving games should not be considered a crime.\n\nEmpress, a powerful DRM cracker, has gained fame for liberating high-profile games from digital rights management software like Denuvo. She sees DRM as a limitation on true ownership and believes preserving games should not be considered a crime.',
+                                  style: plusJakartaSansRegular14,
+                                ),
+                              )
+                            : const SizedBox.shrink(),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
                 showOverlay
                     ? SizedBox(
