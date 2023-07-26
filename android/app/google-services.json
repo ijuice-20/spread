@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "454871293642",
+    "project_id": "spread-007",
+    "storage_bucket": "spread-007.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:454871293642:android:8eb04c5fe91e4cfc3f5e33",
+        "android_client_info": {
+          "package_name": "com.example.spread"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "454871293642-fpg7856o7mlmr42i8aikfq2kdn2hq22g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsRkeEVGE0sg387DTEtSkV0u5evx15uYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "454871293642-fpg7856o7mlmr42i8aikfq2kdn2hq22g.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "454871293642-indotte7ab3k9ifv8s3uipeukjtkiqmg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.spread"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
