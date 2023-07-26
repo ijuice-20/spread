@@ -1,8 +1,10 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:spread/app/application/values/text_style.dart';
-import 'package:spread/features/authentication/widget/sign_in_button.dart';
 import 'package:url_launcher/url_launcher_string.dart';
+
+import 'widget/sign_in_button.dart';
 
 class SignInPage extends StatelessWidget {
   const SignInPage({super.key});
@@ -37,7 +39,9 @@ class SignInPage extends StatelessWidget {
               SignInButton(
                 title: 'Sign in with Google',
                 imagePath: 'assets/images/img-google.png',
-                onTap: () {},
+                onTap: () {
+                  context.go('/home');
+                },
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
