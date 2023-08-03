@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spread/app/application/values/text_style.dart';
+import 'package:spread/features/resource/presentation/presentation.dart';
 
 import 'features/glance/presentation/glance_page.dart';
 import 'features/news/presentation/reads_page.dart';
@@ -18,11 +19,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _widgetOptions = <Widget>[
     const GlancePage(),
     const ReadsPage(),
-    const Center(
-      child: Text(
-        'Bookmarks',
-      ),
-    ),
+    const ResourcePage(),
     const Center(
       child: Text(
         'Profile',
@@ -94,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               BottomNavigationBarItem(
-                label: 'Bookmarks',
+                label: 'Resources',
                 icon: Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: SvgPicture.asset(
