@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:spread/app/application/values/text_style.dart';
 
 import 'features/glance/presentation/glance_page.dart';
 import 'features/news/presentation/reads_page.dart';
@@ -41,30 +43,96 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: const Color(
           0xFFF8F8F8,
         ),
-        bottomNavigationBar: BottomNavigationBar(
-          showUnselectedLabels: true,
-          unselectedItemColor: Colors.grey,
-          selectedItemColor: Colors.amber[800],
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          items: const [
-            BottomNavigationBarItem(
-              label: 'Glance',
-              icon: Icon(Icons.abc),
-            ),
-            BottomNavigationBarItem(
-              label: 'Reads',
-              icon: Icon(Icons.abc),
-            ),
-            BottomNavigationBarItem(
-              label: 'Bookmarks',
-              icon: Icon(Icons.abc),
-            ),
-            BottomNavigationBarItem(
-              label: 'Profile',
-              icon: Icon(Icons.abc),
-            ),
-          ],
+        bottomNavigationBar: SizedBox(
+          height: 80,
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            unselectedLabelStyle: plusJakartaSansRegular12,
+            selectedLabelStyle: plusJakartaSansRegular14,
+            showUnselectedLabels: true,
+            unselectedItemColor: const Color(0xFF969696),
+            selectedItemColor: const Color(0xFF5364FF),
+            currentIndex: _selectedIndex,
+            onTap: _onItemTapped,
+            items: [
+              BottomNavigationBarItem(
+                label: 'Glance',
+                icon: Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: SvgPicture.asset(
+                    'assets/icons/ic-glance.svg',
+                    height: 20,
+                    width: 20,
+                  ),
+                ),
+                activeIcon: Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: SvgPicture.asset(
+                    'assets/icons/ic-glance-selected.svg',
+                    height: 20,
+                    width: 20,
+                  ),
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: 'Reads',
+                icon: Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: SvgPicture.asset(
+                    'assets/icons/ic-read.svg',
+                    height: 20,
+                    width: 20,
+                  ),
+                ),
+                activeIcon: Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: SvgPicture.asset(
+                    'assets/icons/ic-read-selected.svg',
+                    height: 20,
+                    width: 20,
+                  ),
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: 'Bookmarks',
+                icon: Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: SvgPicture.asset(
+                    'assets/icons/ic-bookmark.svg',
+                    height: 20,
+                    width: 20,
+                  ),
+                ),
+                activeIcon: Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: SvgPicture.asset(
+                    'assets/icons/ic-bookmark-selected.svg',
+                    height: 20,
+                    width: 20,
+                  ),
+                ),
+              ),
+              BottomNavigationBarItem(
+                label: 'Profile',
+                icon: Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: SvgPicture.asset(
+                    'assets/icons/ic-profile.svg',
+                    height: 20,
+                    width: 20,
+                  ),
+                ),
+                activeIcon: Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: SvgPicture.asset(
+                    'assets/icons/ic-profile-selected.svg',
+                    height: 20,
+                    width: 20,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
         body: _widgetOptions[_selectedIndex],
       ),
