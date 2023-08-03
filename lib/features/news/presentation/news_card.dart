@@ -1,6 +1,7 @@
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spread/app/application/values/colors.dart';
@@ -182,15 +183,35 @@ class MainImage extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        Image.network(
-          newsData.newsImage,
-          width: double.infinity,
-          height: 200,
-          fit: BoxFit.cover,
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 16,
+          ),
+          child: SizedBox(
+            width: double.infinity,
+            height: 200,
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    newsData.newsImage,
+                  ),
+                  fit: BoxFit.cover,
+                ),
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+          ),
         ),
+        // Image.network(
+        //   newsData.newsImage,
+        //   width: double.infinity,
+        //   height: 200,
+        //   fit: BoxFit.cover,
+        // ),
         Positioned(
           top: 188,
-          right: 16,
+          right: 32,
           child: DecoratedBox(
             decoration: BoxDecoration(
               color: const Color(0xFFFE746F),
@@ -229,10 +250,20 @@ class Publisher extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(
-          'assets/images/img-vox.png',
+        SizedBox(
           height: 32,
           width: 32,
+          child: DecoratedBox(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(6),
+              image: const DecorationImage(
+                image: AssetImage(
+                  'assets/images/img-test.jpg',
+                ),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(
@@ -243,8 +274,8 @@ class Publisher extends StatelessWidget {
             style: plusJakartaSansMedium14,
           ),
         ),
-        Image.asset(
-          'assets/icons/ic-verified.png',
+        SvgPicture.asset(
+          'assets/icons/ic-verified.svg',
           height: 20,
           width: 20,
         ),
