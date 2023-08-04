@@ -5,6 +5,7 @@ import 'package:spread/features/resource/presentation/presentation.dart';
 
 import 'features/glance/presentation/glance_page.dart';
 import 'features/news/presentation/reads_page.dart';
+import 'features/profile/presentation/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -20,11 +21,7 @@ class _HomePageState extends State<HomePage> {
     const GlancePage(),
     const ReadsPage(),
     const ResourcePage(),
-    const Center(
-      child: Text(
-        'Profile',
-      ),
-    ),
+    const ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
