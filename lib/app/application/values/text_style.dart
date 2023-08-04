@@ -50,6 +50,11 @@ final TextStyle plusJakartaSansRegular14 = GoogleFonts.plusJakartaSans(
   fontWeight: FontWeight.w400,
 );
 
+final TextStyle plusJakartaSansRegular16 = GoogleFonts.plusJakartaSans(
+  fontSize: 16,
+  fontWeight: FontWeight.w400,
+);
+
 final TextStyle plusJakartaSansSemiBold10 = GoogleFonts.plusJakartaSans(
   fontSize: 10,
   fontWeight: FontWeight.w600,
@@ -60,7 +65,17 @@ final TextStyle plusJakartaSansSemiBold14 = GoogleFonts.plusJakartaSans(
   fontWeight: FontWeight.w600,
 );
 
+final TextStyle plusJakartaSansSemiBold16 = GoogleFonts.plusJakartaSans(
+  fontSize: 16,
+  fontWeight: FontWeight.w600,
+);
+
 final TextStyle plusJakartaSansSemiBold36 = GoogleFonts.plusJakartaSans(
   fontSize: 36,
   fontWeight: FontWeight.w600,
+);
+
+final TextStyle plusJakartaSansExtraBold20 = GoogleFonts.plusJakartaSans(
+  fontSize: 20,
+  fontWeight: FontWeight.w800,
 );
