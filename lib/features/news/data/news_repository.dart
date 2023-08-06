@@ -8,10 +8,6 @@ final newsRepositoryProvider = Provider(
   ),
 );
 
-final newsFutureProvider = FutureProvider.autoDispose.family<News, String>(
-  (ref, newsId) => ref.watch(newsRepositoryProvider).getNewsById(newsId),
-);
-
 class NewsRepository {
   const NewsRepository({
     required this.firestore,

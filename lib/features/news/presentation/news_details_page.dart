@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -140,8 +141,8 @@ class _NewsDetailsState extends State<NewsDetails> {
               padding: const EdgeInsets.symmetric(
                 vertical: 32,
               ),
-              child: Image.network(
-                widget.newsData.newsImage,
+              child: CachedNetworkImage(
+                imageUrl: widget.newsData.newsImage,
                 height: 200,
                 fit: BoxFit.cover,
               ),

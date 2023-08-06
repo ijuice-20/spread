@@ -1,10 +1,17 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spread/app/application/values/text_style.dart';
+import 'package:spread/features/glance/domain/domain.dart';
 
 class GlanceTweet extends StatelessWidget {
-  const GlanceTweet({super.key});
+  const GlanceTweet({
+    super.key,
+    required this.glanceData,
+  });
+
+  final Glance glanceData;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +46,7 @@ class GlanceTweet extends StatelessWidget {
                     Row(
                       children: [
                         Text(
-                          'Inc42',
+                          glanceData.publisher,
                           style: plusJakartaSansSemiBold14,
                         ),
                         SvgPicture.asset(
@@ -82,31 +89,35 @@ class GlanceTweet extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Fintech Startup Wint askdjbckjasbdc akshcbakjsbc khjabsdckjb Wealth Gets Online Bond Platform Provider Licence From SEBI',
+                    glanceData.content,
                     style: plusJakartaSansMedium14,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 16,
-                    ),
-                    child: SizedBox(
-                      height: 144,
-                      width: double.infinity,
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(
-                            16,
+                  glanceData.image != null
+                      ? Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 16,
                           ),
-                          image: const DecorationImage(
-                            image: AssetImage(
-                              'assets/images/img-test.jpg',
+                          child: SizedBox(
+                            height: 144,
+                            width: double.infinity,
+                            child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(
+                                  16,
+                                ),
+                                image: DecorationImage(
+                                  image: CachedNetworkImageProvider(
+                                    glanceData.image!,
+                                  ),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
                             ),
-                            fit: BoxFit.cover,
                           ),
+                        )
+                      : const SizedBox(
+                          height: 16,
                         ),
-                      ),
-                    ),
-                  ),
                   Padding(
                     padding: const EdgeInsets.only(
                       right: 13,
