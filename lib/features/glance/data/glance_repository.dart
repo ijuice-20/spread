@@ -16,12 +16,18 @@ class GlanceRepository {
 
   final FirebaseFirestore firestore;
 
-  Stream<Iterable<Glance>> glanceStream() =>
-      firestore.collection('glance').orderBy('publishedAt').snapshots().map(
-            (snapshot) => snapshot.docs.map(
-              (documentSnapshot) => Glance.fromJson(
-                documentSnapshot.data(),
-              ),
-            ),
-          );
+  Stream<Iterable<Glance>> glanceStream() => firestore
+      .collection('glance')
+      .orderBy(
+        'publishedAt',
+        descending: true,
+      )
+      .snapshots()
+      .map(
+        (snapshot) => snapshot.docs.map(
+          (documentSnapshot) => Glance.fromJson(
+            documentSnapshot.data(),
+          ),
+        ),
+      );
 }
