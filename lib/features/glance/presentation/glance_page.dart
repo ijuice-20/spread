@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:spread/app/application/values/colors.dart';
 import 'package:spread/features/glance/data/data.dart';
 import 'package:spread/features/glance/presentation/glance_tweet.dart';
 
@@ -18,45 +17,47 @@ class GlancePage extends ConsumerWidget {
     final glanceValue = ref.watch(galnceStreamProvider);
     return CustomScrollView(
       slivers: [
-        SliverAppBar(
-          expandedHeight: 120,
-          pinned: false,
-          flexibleSpace: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Glance',
-                  style: GoogleFonts.dmSerifDisplay().copyWith(
-                    fontSize: 40,
-                    color: Colors.white,
-                  ),
-                ),
-                SvgPicture.asset(
-                  'assets/icons/ic-glance-white.svg',
-                  height: 16,
-                  width: 16,
-                ),
-              ],
-            ),
-          ),
-          backgroundColor: const Color(0xFF1C51F7),
-        ),
         SliverToBoxAdapter(
-          child: Container(
-            color: const Color(0xFF1C51F7),
-            height: 24,
+          child: Padding(
+            padding: const EdgeInsets.only(
+              top: 32,
+              right: 24,
+              bottom: 32,
+              left: 24,
+            ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                Container(
-                  height: 24,
-                  decoration: const BoxDecoration(
-                    color: lmBackground,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(24),
-                      topRight: Radius.circular(24),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Glance',
+                      style: GoogleFonts.dmSerifDisplay().copyWith(
+                        fontSize: 20,
+                      ),
                     ),
+                    SvgPicture.asset(
+                      'assets/icons/ic-glance.svg',
+                      height: 16,
+                      width: 16,
+                      color: Colors.black,
+                    ),
+                    const CircleAvatar(
+                      radius: 16,
+                      backgroundImage: AssetImage(
+                        'assets/images/img-test.jpg',
+                      ),
+                    ),
+                  ],
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                    top: 16,
+                  ),
+                  child: Divider(
+                    height: 0,
+                    color: Color(0X33828282),
                   ),
                 ),
               ],

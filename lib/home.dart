@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spread/app/application/values/text_style.dart';
-import 'package:spread/features/resource/presentation/presentation.dart';
+import 'package:spread/features/events/presentation/presentation.dart';
 
 import 'features/glance/presentation/glance_page.dart';
 import 'features/news/presentation/reads_page.dart';
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _widgetOptions = <Widget>[
     const GlancePage(),
     const ReadsPage(),
-    const ResourcePage(),
+    const EventsPage(),
     const ProfilePage(),
   ];
 
@@ -88,11 +88,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               BottomNavigationBarItem(
-                label: 'Resources',
+                label: 'Events',
                 icon: Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: SvgPicture.asset(
-                    'assets/icons/ic-bookmark.svg',
+                    'assets/icons/ic-events.svg',
                     height: 20,
                     width: 20,
                   ),
@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                 activeIcon: Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: SvgPicture.asset(
-                    'assets/icons/ic-bookmark-selected.svg',
+                    'assets/icons/ic-events-selected.svg',
                     height: 20,
                     width: 20,
                   ),
