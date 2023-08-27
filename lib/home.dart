@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:spread/app/application/values/text_style.dart';
 import 'package:spread/features/events/presentation/presentation.dart';
+import 'package:spread/features/learn/presentation/presentation.dart';
 
 import 'features/glance/presentation/glance_page.dart';
 import 'features/news/presentation/reads_page.dart';
-import 'features/profile/presentation/profile_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     const GlancePage(),
     const ReadsPage(),
     const EventsPage(),
-    const ProfilePage(),
+    const LearnPage(),
   ];
 
   void _onItemTapped(int index) {
@@ -107,11 +107,11 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               BottomNavigationBarItem(
-                label: 'Profile',
+                label: 'Learn',
                 icon: Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: SvgPicture.asset(
-                    'assets/icons/ic-profile.svg',
+                    'assets/icons/ic-read.svg',
                     height: 20,
                     width: 20,
                   ),
@@ -119,7 +119,7 @@ class _HomePageState extends State<HomePage> {
                 activeIcon: Padding(
                   padding: const EdgeInsets.only(bottom: 4),
                   child: SvgPicture.asset(
-                    'assets/icons/ic-profile-selected.svg',
+                    'assets/icons/ic-read-selected.svg',
                     height: 20,
                     width: 20,
                   ),

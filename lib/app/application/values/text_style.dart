@@ -20,8 +20,8 @@ final TextStyle plusJakartaSansLight16 = GoogleFonts.plusJakartaSans(
   fontWeight: FontWeight.w300,
 );
 
-final TextStyle plusJakartaSansMedium16 = GoogleFonts.plusJakartaSans(
-  fontSize: 16,
+final TextStyle plusJakartaSansMedium12 = GoogleFonts.plusJakartaSans(
+  fontSize: 12,
   fontWeight: FontWeight.w500,
 );
 
@@ -30,8 +30,8 @@ final TextStyle plusJakartaSansMedium14 = GoogleFonts.plusJakartaSans(
   fontWeight: FontWeight.w500,
 );
 
-final TextStyle plusJakartaSansMedium12 = GoogleFonts.plusJakartaSans(
-  fontSize: 12,
+final TextStyle plusJakartaSansMedium16 = GoogleFonts.plusJakartaSans(
+  fontSize: 16,
   fontWeight: FontWeight.w500,
 );
 

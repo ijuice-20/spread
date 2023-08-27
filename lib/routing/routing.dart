@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:spread/features/news/domain/domain.dart';
+import 'package:spread/features/profile/presentation/presentation.dart';
 
 import '../features/authentication/presentation/sign_in_page.dart';
 import '../features/news/presentation/news_details_page.dart';
@@ -23,6 +24,10 @@ final GoRouter router = GoRouter(
       builder: (context, state) => NewsDetails(
         newsData: state.extra as News,
       ),
+    ),
+    GoRoute(
+      path: '/profile',
+      builder: (context, state) => const ProfilePage(),
     ),
     // StatefulShellRoute.indexedStack(
     //   builder: (context, state, navigationShell) {
