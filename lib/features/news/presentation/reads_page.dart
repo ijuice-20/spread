@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spread/features/news/data/news_repository.dart';
 
@@ -46,10 +47,17 @@ class ReadsPage extends ConsumerWidget {
                       width: 16,
                       color: Colors.black,
                     ),
-                    const CircleAvatar(
-                      radius: 16,
-                      backgroundImage: AssetImage(
-                        'assets/images/img-test.jpg',
+                    InkWell(
+                      onTap: () {
+                        context.push(
+                          '/profile',
+                        );
+                      },
+                      child: const CircleAvatar(
+                        radius: 16,
+                        backgroundImage: AssetImage(
+                          'assets/images/img-test.jpg',
+                        ),
                       ),
                     ),
                   ],
