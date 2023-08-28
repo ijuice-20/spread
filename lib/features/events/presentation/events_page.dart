@@ -1,8 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:spread/app/application/presentation/presentation.dart';
 import 'package:spread/app/application/values/text_style.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
@@ -56,59 +55,9 @@ class EventsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       slivers: [
-        SliverToBoxAdapter(
-          child: Padding(
-            padding: const EdgeInsets.only(
-              top: 32,
-              right: 24,
-              bottom: 32,
-              left: 24,
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      'Events',
-                      style: GoogleFonts.dmSerifDisplay().copyWith(
-                        fontSize: 20,
-                      ),
-                    ),
-                    SvgPicture.asset(
-                      'assets/icons/ic-read.svg',
-                      height: 16,
-                      width: 16,
-                      color: Colors.black,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        context.push(
-                          '/profile',
-                        );
-                      },
-                      child: const CircleAvatar(
-                        radius: 16,
-                        backgroundImage: AssetImage(
-                          'assets/images/img-test.jpg',
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(
-                    top: 16,
-                  ),
-                  child: Divider(
-                    height: 0,
-                    color: Color(0X33828282),
-                  ),
-                ),
-              ],
-            ),
-          ),
+        const CustomAppBar(
+          title: 'Events',
+          svgPath: 'assets/icons/ic-read.svg',
         ),
         SliverList(
           delegate: SliverChildBuilderDelegate(

@@ -58,126 +58,124 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: ListView(
-          padding: const EdgeInsets.symmetric(
-            vertical: 32,
-            horizontal: 24,
+    return Scaffold(
+      body: ListView(
+        padding: const EdgeInsets.symmetric(
+          vertical: 48,
+          horizontal: 24,
+        ),
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              InkWell(
+                onTap: () {
+                  context.pop();
+                },
+                child: SvgPicture.asset(
+                  'assets/icons/ic-arrow.svg',
+                ),
+              ),
+              Text(
+                'Profile',
+                style: GoogleFonts.dmSerifDisplay().copyWith(
+                  fontSize: 20,
+                ),
+              ),
+              Image.asset(
+                'assets/icons/profile-icons/ic-edit.png',
+                height: 16,
+              ),
+            ],
           ),
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                InkWell(
-                  onTap: () {
-                    context.pop();
-                  },
-                  child: SvgPicture.asset(
-                    'assets/icons/ic-arrow.svg',
-                  ),
-                ),
-                Text(
-                  'Profile',
-                  style: GoogleFonts.dmSerifDisplay().copyWith(
-                    fontSize: 20,
-                  ),
-                ),
-                Image.asset(
-                  'assets/icons/profile-icons/ic-edit.png',
-                  height: 16,
-                ),
-              ],
+          const Padding(
+            padding: EdgeInsets.only(
+              top: 16,
+              bottom: 32,
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 16,
-                bottom: 32,
-              ),
-              child: Divider(
-                height: 0,
-                color: Color(0XCC828282),
-              ),
+            child: Divider(
+              height: 0,
+              color: Color(0X66828282),
             ),
-            Column(
-              children: [
-                const CircleAvatar(
-                  backgroundImage: AssetImage(
-                    'assets/images/img-test.jpg',
-                  ),
-                  radius: 40,
+          ),
+          Column(
+            children: [
+              const CircleAvatar(
+                backgroundImage: AssetImage(
+                  'assets/images/img-test.jpg',
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 16,
-                  ),
-                  child: Text(
-                    'Jordan Belfort',
-                    style: plusJakartaSansSemiBold20,
-                  ),
+                radius: 40,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 16,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 4,
-                  ),
-                  child: Text(
-                    '+91 8281384617',
-                    style: plusJakartaSansLight12.copyWith(
-                      color: const Color(0xFF737373),
-                    ),
-                  ),
+                child: Text(
+                  'Jordan Belfort',
+                  style: plusJakartaSansSemiBold20,
                 ),
-                Text(
-                  'wolf.of.wallstreet@gmail.com',
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 4,
+                ),
+                child: Text(
+                  '+91 8281384617',
                   style: plusJakartaSansLight12.copyWith(
                     color: const Color(0xFF737373),
                   ),
                 ),
-              ],
+              ),
+              Text(
+                'wolf.of.wallstreet@gmail.com',
+                style: plusJakartaSansLight12.copyWith(
+                  color: const Color(0xFF737373),
+                ),
+              ),
+            ],
+          ),
+          const Padding(
+            padding: EdgeInsets.only(
+              top: 56,
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 56,
-              ),
-              child: CategoryMenu(
-                category: 'Personal',
-                titles: _titlesPersonal,
-                iconPaths: _iconPathsPersonal,
-              ),
+            child: CategoryMenu(
+              category: 'Personal',
+              titles: _titlesPersonal,
+              iconPaths: _iconPathsPersonal,
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 56,
-              ),
-              child: CategoryMenu(
-                category: 'Preferences',
-                titles: _titlesPreference,
-                iconPaths: _iconPathsPreference,
-              ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(
+              top: 56,
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 56,
-              ),
-              child: CategoryMenu(
-                category: 'App',
-                titles: _titlesApp,
-                iconPaths: _iconPathsApp,
-              ),
+            child: CategoryMenu(
+              category: 'Preferences',
+              titles: _titlesPreference,
+              iconPaths: _iconPathsPreference,
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                top: 32,
-                bottom: 40,
-              ),
-              child: CategoryMenu(
-                category: '',
-                titles: _titlesEnd,
-                iconPaths: _iconPathsEnd,
-              ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(
+              top: 56,
             ),
-          ],
-        ),
+            child: CategoryMenu(
+              category: 'App',
+              titles: _titlesApp,
+              iconPaths: _iconPathsApp,
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(
+              top: 32,
+              bottom: 40,
+            ),
+            child: CategoryMenu(
+              category: '',
+              titles: _titlesEnd,
+              iconPaths: _iconPathsEnd,
+            ),
+          ),
+        ],
       ),
     );
   }

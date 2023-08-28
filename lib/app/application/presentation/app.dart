@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../routing/routing.dart';
+import 'package:spread/routing/routing.dart';
 
 class SpreadApp extends StatelessWidget {
   const SpreadApp({super.key});
