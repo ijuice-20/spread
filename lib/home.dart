@@ -5,7 +5,7 @@ import 'package:spread/features/events/presentation/presentation.dart';
 import 'package:spread/features/learn/presentation/presentation.dart';
 
 import 'features/glance/presentation/glance_page.dart';
-import 'features/news/presentation/reads_page.dart';
+import 'features/reads/presentation/reads_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

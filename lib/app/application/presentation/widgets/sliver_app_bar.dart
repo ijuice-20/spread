@@ -18,9 +18,7 @@ class CustomAppBar extends StatelessWidget {
     return SliverPadding(
       padding: const EdgeInsets.only(
         top: 24,
-        right: 24,
         bottom: 32,
-        left: 24,
       ),
       sliver: SliverAppBar(
         floating: true,
@@ -30,13 +28,18 @@ class CustomAppBar extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         leadingWidth: 120,
-        leading: Align(
-          alignment: Alignment.centerLeft,
-          child: Text(
-            title,
-            style: GoogleFonts.dmSerifDisplay().copyWith(
-              fontSize: 20,
-              color: Colors.black,
+        leading: Padding(
+          padding: const EdgeInsets.only(
+            left: 24,
+          ),
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              title,
+              style: GoogleFonts.dmSerifDisplay().copyWith(
+                fontSize: 20,
+                color: Colors.black,
+              ),
             ),
           ),
         ),
@@ -47,16 +50,21 @@ class CustomAppBar extends StatelessWidget {
           color: Colors.black,
         ),
         actions: [
-          InkWell(
-            onTap: () {
-              context.push(
-                '/profile',
-              );
-            },
-            child: const CircleAvatar(
-              radius: 16,
-              backgroundImage: AssetImage(
-                'assets/images/img-test.jpg',
+          Padding(
+            padding: const EdgeInsets.only(
+              right: 24,
+            ),
+            child: InkWell(
+              onTap: () {
+                context.push(
+                  '/profile',
+                );
+              },
+              child: const CircleAvatar(
+                radius: 16,
+                backgroundImage: AssetImage(
+                  'assets/images/img-test.jpg',
+                ),
               ),
             ),
           ),

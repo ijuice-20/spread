@@ -1,26 +1,26 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:spread/features/news/domain/domain.dart';
+import 'package:spread/features/reads/domain/domain.dart';
 
-final newsRepositoryProvider = Provider(
-  (ref) => NewsRepository(
+final readsRepositoryProvider = Provider(
+  (ref) => ReadsRepository(
     firestore: FirebaseFirestore.instance,
   ),
 );
 
-class NewsRepository {
-  const NewsRepository({
+class ReadsRepository {
+  const ReadsRepository({
     required this.firestore,
   });
 
   final FirebaseFirestore firestore;
 
-  Future<News> getNewsById(String newsId) async {
-    final snapshot = await firestore.collection('news').doc(newsId).get();
-    return News.fromJson(snapshot.data()!);
+  Future<Reads> getReadsById(String readsId) async {
+    final snapshot = await firestore.collection('news').doc(readsId).get();
+    return Reads.fromJson(snapshot.data()!);
   }
 
-  Stream<Iterable<News>> newsStream() => firestore
+  Stream<Iterable<Reads>> readsStream() => firestore
       .collection('news')
       .orderBy(
         'publishedDate',
@@ -29,7 +29,7 @@ class NewsRepository {
       .snapshots()
       .map(
         (snapshot) => snapshot.docs.map(
-          (documentSnapshot) => News.fromJson(
+          (documentSnapshot) => Reads.fromJson(
             documentSnapshot.data(),
           ),
         ),

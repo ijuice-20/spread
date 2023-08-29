@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'news.dart';
+part of 'reads.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_News _$$_NewsFromJson(Map<String, dynamic> json) => _$_News(
+_$_Reads _$$_ReadsFromJson(Map<String, dynamic> json) => _$_Reads(
       author: json['author'] as String,
       content: json['content'] as String,
       heading: json['heading'] as String,
@@ -17,7 +17,7 @@ _$_News _$$_NewsFromJson(Map<String, dynamic> json) => _$_News(
           (json['summary'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$$_NewsToJson(_$_News instance) => <String, dynamic>{
+Map<String, dynamic> _$$_ReadsToJson(_$_Reads instance) => <String, dynamic>{
       'author': instance.author,
       'content': instance.content,
       'heading': instance.heading,
