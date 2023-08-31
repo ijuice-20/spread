@@ -5,21 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spread/app/application/values/text_style.dart';
-import 'package:spread/features/news/presentation/news_card.dart';
+import 'package:spread/features/reads/presentation/reads_card.dart';
 
-import '../domain/news.dart';
+import '../domain/reads.dart';
 
-class NewsDetails extends StatefulWidget {
-  const NewsDetails({
+class ReadsDetails extends StatefulWidget {
+  const ReadsDetails({
     super.key,
-    required this.newsData,
+    required this.readsData,
   });
-  final News newsData;
+  final Reads readsData;
   @override
-  State<NewsDetails> createState() => _NewsDetailsState();
+  State<ReadsDetails> createState() => _ReadsDetailsState();
 }
 
-class _NewsDetailsState extends State<NewsDetails> {
+class _ReadsDetailsState extends State<ReadsDetails> {
   ScrollController scrollController = ScrollController();
   double progress = 0;
 
@@ -74,7 +74,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                 left: 24,
               ),
               child: Publisher(
-                newsData: widget.newsData,
+                newsData: widget.readsData,
               ),
             ),
             Padding(
@@ -84,7 +84,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                 top: 16,
               ),
               child: Text(
-                widget.newsData.heading,
+                widget.readsData.heading,
                 style: GoogleFonts.dmSerifDisplay().copyWith(
                   fontSize: 28,
                 ),
@@ -97,7 +97,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                 bottom: 4,
               ),
               child: Text(
-                'By ${widget.newsData.author}',
+                'By ${widget.readsData.author}',
                 style: plusJakartaSansRegular10.copyWith(
                   color: const Color(0xFF969794),
                 ),
@@ -142,7 +142,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                 vertical: 32,
               ),
               child: CachedNetworkImage(
-                imageUrl: widget.newsData.newsImage,
+                imageUrl: widget.readsData.newsImage,
                 height: 200,
                 fit: BoxFit.cover,
               ),
@@ -154,7 +154,7 @@ class _NewsDetailsState extends State<NewsDetails> {
                 bottom: 40,
               ),
               child: Text(
-                widget.newsData.content,
+                widget.readsData.content,
                 style: plusJakartaSansLight16,
               ),
             ),

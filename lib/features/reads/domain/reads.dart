@@ -1,11 +1,11 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'news.freezed.dart';
-part 'news.g.dart';
+part 'reads.freezed.dart';
+part 'reads.g.dart';
 
 @freezed
-class News with _$News {
-  factory News({
+class Reads with _$Reads {
+  factory Reads({
     required String author,
     required String content,
     required String heading,
@@ -13,7 +13,7 @@ class News with _$News {
     required String publisher,
     required String tag,
     required List<String> summary,
-  }) = _News;
+  }) = _Reads;
 
-  factory News.fromJson(Map<String, dynamic> json) => _$NewsFromJson(json);
+  factory Reads.fromJson(Map<String, dynamic> json) => _$ReadsFromJson(json);
 }

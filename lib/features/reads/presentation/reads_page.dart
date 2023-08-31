@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:spread/app/application/presentation/presentation.dart';
-import 'package:spread/features/news/data/news_repository.dart';
+import 'package:spread/features/reads/data/reads_repository.dart';
 
-import 'news_card.dart';
+import 'reads_card.dart';
 
-final newsStreamProvider = StreamProvider(
-  (ref) => ref.watch(newsRepositoryProvider).newsStream(),
+final readsStreamProvider = StreamProvider(
+  (ref) => ref.watch(readsRepositoryProvider).readsStream(),
 );
 
 class ReadsPage extends ConsumerWidget {
@@ -16,23 +16,23 @@ class ReadsPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final newsStreamValue = ref.watch(newsStreamProvider);
+    final readsStreamValue = ref.watch(readsStreamProvider);
     return CustomScrollView(
       slivers: [
         const CustomAppBar(
           title: 'Reads',
           svgPath: 'assets/icons/ic-read.svg',
         ),
-        newsStreamValue.when(
-          data: (newsData) => SliverList.separated(
-            itemCount: newsData.length,
+        readsStreamValue.when(
+          data: (readsData) => SliverList.separated(
+            itemCount: readsData.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: EdgeInsets.only(
                   top: index == 0 ? 0 : 40,
                 ),
-                child: NewsCard(
-                  newsData: newsData.elementAt(index),
+                child: ReadsCard(
+                  readsData: readsData.elementAt(index),
                 ),
               );
             },

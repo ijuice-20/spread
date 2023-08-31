@@ -8,21 +8,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:spread/app/application/values/colors.dart';
 import 'package:spread/app/application/values/text_style.dart';
 
-import '../domain/news.dart';
+import '../domain/reads.dart';
 
-class NewsCard extends ConsumerStatefulWidget {
-  const NewsCard({
+class ReadsCard extends ConsumerStatefulWidget {
+  const ReadsCard({
     super.key,
-    required this.newsData,
+    required this.readsData,
   });
 
-  final News newsData;
+  final Reads readsData;
 
   @override
-  ConsumerState<NewsCard> createState() => _NewsCardState();
+  ConsumerState<ReadsCard> createState() => _NewsCardState();
 }
 
-class _NewsCardState extends ConsumerState<NewsCard> {
+class _NewsCardState extends ConsumerState<ReadsCard> {
   bool showOverlay = true;
 
   @override
@@ -30,15 +30,15 @@ class _NewsCardState extends ConsumerState<NewsCard> {
     return InkWell(
       onTap: () {
         context.push(
-          '/news-details',
-          extra: widget.newsData,
+          '/reads-details',
+          extra: widget.readsData,
         );
       },
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           MainImage(
-            newsData: widget.newsData,
+            newsData: widget.readsData,
           ),
           Padding(
             padding: const EdgeInsets.only(
@@ -46,7 +46,7 @@ class _NewsCardState extends ConsumerState<NewsCard> {
               left: 24,
             ),
             child: Publisher(
-              newsData: widget.newsData,
+              newsData: widget.readsData,
             ),
           ),
           Padding(
@@ -55,7 +55,7 @@ class _NewsCardState extends ConsumerState<NewsCard> {
               vertical: 8,
             ),
             child: Text(
-              widget.newsData.heading,
+              widget.readsData.heading,
               style: GoogleFonts.dmSerifDisplay().copyWith(
                 fontSize: 26,
               ),
@@ -177,7 +177,7 @@ class MainImage extends StatelessWidget {
     super.key,
     required this.newsData,
   });
-  final News newsData;
+  final Reads newsData;
 
   @override
   Widget build(BuildContext context) {
@@ -245,7 +245,7 @@ class Publisher extends StatelessWidget {
     super.key,
     required this.newsData,
   });
-  final News newsData;
+  final Reads newsData;
 
   @override
   Widget build(BuildContext context) {
