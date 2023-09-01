@@ -74,7 +74,7 @@ class _ReadsDetailsState extends State<ReadsDetails> {
                 left: 24,
               ),
               child: Publisher(
-                newsData: widget.readsData,
+                readsData: widget.readsData,
               ),
             ),
             Padding(
