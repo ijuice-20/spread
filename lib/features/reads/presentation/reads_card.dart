@@ -19,10 +19,10 @@ class ReadsCard extends ConsumerStatefulWidget {
   final Reads readsData;
 
   @override
-  ConsumerState<ReadsCard> createState() => _NewsCardState();
+  ConsumerState<ReadsCard> createState() => _ReadsCardState();
 }
 
-class _NewsCardState extends ConsumerState<ReadsCard> {
+class _ReadsCardState extends ConsumerState<ReadsCard> {
   bool showOverlay = true;
 
   @override
@@ -38,7 +38,7 @@ class _NewsCardState extends ConsumerState<ReadsCard> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           MainImage(
-            newsData: widget.readsData,
+            readsData: widget.readsData,
           ),
           Padding(
             padding: const EdgeInsets.only(
@@ -46,7 +46,7 @@ class _NewsCardState extends ConsumerState<ReadsCard> {
               left: 24,
             ),
             child: Publisher(
-              newsData: widget.readsData,
+              readsData: widget.readsData,
             ),
           ),
           Padding(
@@ -175,9 +175,9 @@ class _NewsCardState extends ConsumerState<ReadsCard> {
 class MainImage extends StatelessWidget {
   const MainImage({
     super.key,
-    required this.newsData,
+    required this.readsData,
   });
-  final Reads newsData;
+  final Reads readsData;
 
   @override
   Widget build(BuildContext context) {
@@ -195,7 +195,7 @@ class MainImage extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: CachedNetworkImageProvider(
-                    newsData.newsImage,
+                    readsData.newsImage,
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -204,12 +204,6 @@ class MainImage extends StatelessWidget {
             ),
           ),
         ),
-        // Image.network(
-        //   newsData.newsImage,
-        //   width: double.infinity,
-        //   height: 200,
-        //   fit: BoxFit.cover,
-        // ),
         Positioned(
           top: 188,
           right: 32,
@@ -229,7 +223,7 @@ class MainImage extends StatelessWidget {
                 vertical: 4,
               ),
               child: Text(
-                newsData.tag,
+                readsData.tag,
                 style: plusJakartaSansLight12,
               ),
             ),
@@ -243,9 +237,9 @@ class MainImage extends StatelessWidget {
 class Publisher extends StatelessWidget {
   const Publisher({
     super.key,
-    required this.newsData,
+    required this.readsData,
   });
-  final Reads newsData;
+  final Reads readsData;
 
   @override
   Widget build(BuildContext context) {
@@ -271,7 +265,7 @@ class Publisher extends StatelessWidget {
             left: 8,
           ),
           child: Text(
-            newsData.publisher,
+            readsData.publisher,
             style: plusJakartaSansMedium14,
           ),
         ),
