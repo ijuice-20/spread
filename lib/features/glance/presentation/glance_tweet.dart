@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:dotted_decoration/dotted_decoration.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:spread/app/application/values/text_style.dart';
 import 'package:spread/features/glance/domain/domain.dart';
 
@@ -128,6 +129,8 @@ class GlanceTweet extends StatelessWidget {
                         buildActionItem(
                           svgPath: 'assets/icons/ic-up-punch.svg',
                           reactionCount: '29.8K',
+                          shareMessage:
+                              '${glanceData.content} - Reported by ${glanceData.publisher}. Download Spread and Never miss a single startup news!',
                         ),
                         Padding(
                           padding: const EdgeInsets.only(
@@ -136,6 +139,8 @@ class GlanceTweet extends StatelessWidget {
                           child: buildActionItem(
                             svgPath: 'assets/icons/ic-share.svg',
                             reactionCount: '29.3K',
+                            shareMessage:
+                                '${glanceData.content} - Reported by ${glanceData.publisher}. Download Spread and Never miss a single startup news!',
                           ),
                         ),
                       ],
@@ -153,13 +158,19 @@ class GlanceTweet extends StatelessWidget {
   Row buildActionItem({
     required String svgPath,
     required String reactionCount,
+    required String shareMessage,
   }) {
     return Row(
       children: [
-        SvgPicture.asset(
-          svgPath,
-          height: 15,
-          width: 15,
+        InkWell(
+          onTap: () {
+            Share.share(shareMessage);
+          },
+          child: SvgPicture.asset(
+            svgPath,
+            height: 15,
+            width: 15,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 4),
