@@ -4,7 +4,7 @@ import 'package:spread/app/application/presentation/presentation.dart';
 import 'package:spread/features/glance/data/data.dart';
 import 'package:spread/features/glance/presentation/glance_tweet.dart';
 
-final galnceStreamProvider = StreamProvider(
+final glanceStreamProvider = StreamProvider(
   (ref) => ref.watch(glanceRepositoryProvider).glanceStream(),
 );
 
@@ -13,7 +13,7 @@ class GlancePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final glanceValue = ref.watch(galnceStreamProvider);
+    final glanceValue = ref.watch(glanceStreamProvider);
     return CustomScrollView(
       slivers: [
         const CustomAppBar(
