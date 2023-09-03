@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -22,13 +20,22 @@ class ReadsDetails extends StatefulWidget {
 class _ReadsDetailsState extends State<ReadsDetails> {
   ScrollController scrollController = ScrollController();
   double progress = 0;
+  double maxExtend = 0;
+  bool maxExtendCalculated = false;
 
   @override
   void initState() {
     super.initState();
     scrollController.addListener(() {
-      progress = scrollController.offset / scrollController.position.maxScrollExtent;
-      setState(() {});
+      setState(() {
+        if (!maxExtendCalculated) {
+          maxExtend = scrollController.position.extentAfter;
+          maxExtendCalculated = true;
+        }
+        final currentExtend =
+            scrollController.position.pixels + scrollController.position.extentBefore;
+        progress = currentExtend / maxExtend;
+      });
     });
   }
 
@@ -40,7 +47,6 @@ class _ReadsDetailsState extends State<ReadsDetails> {
 
   @override
   Widget build(BuildContext context) {
-    log(progress.toString());
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -51,7 +57,7 @@ class _ReadsDetailsState extends State<ReadsDetails> {
             child: LinearProgressIndicator(
               value: progress,
               backgroundColor: Colors.grey.withOpacity(0.2),
-              color: Colors.red,
+              color: const Color(0xFF5364FF),
               minHeight: 2.4,
             ),
           ),
