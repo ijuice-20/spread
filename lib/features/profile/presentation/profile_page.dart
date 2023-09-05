@@ -200,7 +200,7 @@ class CategoryMenu extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(
-            bottom: 32,
+            bottom: 8,
           ),
           child: Text(
             category,
