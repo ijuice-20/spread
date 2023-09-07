@@ -39,11 +39,15 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
-
+  fonts:
+    - family: Balig Upright
+      fonts:
+        - asset: assets/fonts/balig-upright-regular.ttf
   assets:
     - assets/icons/
     - assets/icons/profile-icons/
     - assets/images/
+
 
 scripts:
   generate_code: dart run build_runner build -d
