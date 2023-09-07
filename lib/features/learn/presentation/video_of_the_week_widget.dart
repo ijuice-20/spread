@@ -33,7 +33,11 @@ class VideoOfTheWeek extends StatelessWidget {
                 ),
                 child: DecoratedBox(
                   decoration: BoxDecoration(
-                    color: const Color(0xFF262626),
+                    // color: const Color(0xFF262626),
+                    border: Border.all(
+                      color: Colors.black,
+                      strokeAlign: BorderSide.strokeAlignCenter,
+                    ),
                     borderRadius: BorderRadius.circular(
                       12,
                     ),
@@ -51,7 +55,8 @@ class VideoOfTheWeek extends StatelessWidget {
                           'Student\'s Guide To Becoming A Successful Startup Founder',
                           style: GoogleFonts.dmSerifDisplay(
                             fontSize: 22,
-                            color: Colors.white,
+                            color: Colors.black,
+                            // color: Colors.white,
                           ),
                         ),
                         const Padding(
@@ -59,7 +64,8 @@ class VideoOfTheWeek extends StatelessWidget {
                             vertical: 16,
                           ),
                           child: Divider(
-                            color: Color(0xFF4E4E4E),
+                            color: Color(0xFFBBB9B9),
+                            // color: Color(0xFF4E4E4E),
                             height: 0,
                             thickness: 0.5,
                           ),
@@ -88,8 +94,8 @@ class VideoOfTheWeek extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           offset: const Offset(0, 4),
-                          color: Colors.black.withOpacity(0.26),
-                          blurRadius: 8,
+                          color: Colors.black.withOpacity(0.25),
+                          blurRadius: 10,
                         ),
                       ],
                       borderRadius: BorderRadius.circular(8),
@@ -134,7 +140,8 @@ class YouTuberInfo extends StatelessWidget {
                     'Y Combinator',
                     style: GoogleFonts.plusJakartaSans(
                       fontSize: 12,
-                      color: Colors.white,
+                      color: Colors.black,
+                      // color: Colors.white,
                     ),
                   ),
                   SvgPicture.asset(
