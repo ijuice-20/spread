@@ -124,7 +124,7 @@ class LearnPage extends StatelessWidget {
                       ),
                     ),
                     SizedBox(
-                      width: 144,
+                      width: 120,
                       child: Image.asset(
                         'assets/images/img-learn-illustration.png',
                       ),
