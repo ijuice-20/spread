@@ -251,10 +251,8 @@ class Publisher extends StatelessWidget {
           child: DecoratedBox(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
-              image: const DecorationImage(
-                image: AssetImage(
-                  'assets/images/img-test.jpg',
-                ),
+              image: DecorationImage(
+                image: CachedNetworkImageProvider(readsData.profileImage),:
                 fit: BoxFit.cover,
               ),
             ),

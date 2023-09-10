@@ -8,6 +8,7 @@ class Glance with _$Glance {
   factory Glance({
     required String publisher,
     required String content,
+    required String profileImage,
     // required DateTime publishedAt,
     String? image,
   }) = _Glance;

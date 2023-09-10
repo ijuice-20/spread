@@ -12,6 +12,7 @@ _$_Reads _$$_ReadsFromJson(Map<String, dynamic> json) => _$_Reads(
       heading: json['heading'] as String,
       newsImage: json['newsImage'] as String,
       publisher: json['publisher'] as String,
+      profileImage: json['profileImage'] as String,
       tag: json['tag'] as String,
       summary:
           (json['summary'] as List<dynamic>).map((e) => e as String).toList(),
@@ -23,6 +24,7 @@ Map<String, dynamic> _$$_ReadsToJson(_$_Reads instance) => <String, dynamic>{
       'heading': instance.heading,
       'newsImage': instance.newsImage,
       'publisher': instance.publisher,
+      'profileImage': instance.profileImage,
       'tag': instance.tag,
       'summary': instance.summary,
     };

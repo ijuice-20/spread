@@ -21,7 +21,8 @@ Glance _$GlanceFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Glance {
   String get publisher => throw _privateConstructorUsedError;
-  String get content =>
+  String get content => throw _privateConstructorUsedError;
+  String get profileImage =>
       throw _privateConstructorUsedError; // required DateTime publishedAt,
   String? get image => throw _privateConstructorUsedError;
 
@@ -35,7 +36,8 @@ abstract class $GlanceCopyWith<$Res> {
   factory $GlanceCopyWith(Glance value, $Res Function(Glance) then) =
       _$GlanceCopyWithImpl<$Res, Glance>;
   @useResult
-  $Res call({String publisher, String content, String? image});
+  $Res call(
+      {String publisher, String content, String profileImage, String? image});
 }
 
 /// @nodoc
@@ -53,6 +55,7 @@ class _$GlanceCopyWithImpl<$Res, $Val extends Glance>
   $Res call({
     Object? publisher = null,
     Object? content = null,
+    Object? profileImage = null,
     Object? image = freezed,
   }) {
     return _then(_value.copyWith(
@@ -63,6 +66,10 @@ class _$GlanceCopyWithImpl<$Res, $Val extends Glance>
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      profileImage: null == profileImage
+          ? _value.profileImage
+          : profileImage // ignore: cast_nullable_to_non_nullable
               as String,
       image: freezed == image
           ? _value.image
@@ -78,7 +85,8 @@ abstract class _$$_GlanceCopyWith<$Res> implements $GlanceCopyWith<$Res> {
       __$$_GlanceCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String publisher, String content, String? image});
+  $Res call(
+      {String publisher, String content, String profileImage, String? image});
 }
 
 /// @nodoc
@@ -93,6 +101,7 @@ class __$$_GlanceCopyWithImpl<$Res>
   $Res call({
     Object? publisher = null,
     Object? content = null,
+    Object? profileImage = null,
     Object? image = freezed,
   }) {
     return _then(_$_Glance(
@@ -103,6 +112,10 @@ class __$$_GlanceCopyWithImpl<$Res>
       content: null == content
           ? _value.content
           : content // ignore: cast_nullable_to_non_nullable
+              as String,
+      profileImage: null == profileImage
+          ? _value.profileImage
+          : profileImage // ignore: cast_nullable_to_non_nullable
               as String,
       image: freezed == image
           ? _value.image
@@ -115,7 +128,11 @@ class __$$_GlanceCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Glance implements _Glance {
-  _$_Glance({required this.publisher, required this.content, this.image});
+  _$_Glance(
+      {required this.publisher,
+      required this.content,
+      required this.profileImage,
+      this.image});
 
   factory _$_Glance.fromJson(Map<String, dynamic> json) =>
       _$$_GlanceFromJson(json);
@@ -124,13 +141,15 @@ class _$_Glance implements _Glance {
   final String publisher;
   @override
   final String content;
+  @override
+  final String profileImage;
 // required DateTime publishedAt,
   @override
   final String? image;
 
   @override
   String toString() {
-    return 'Glance(publisher: $publisher, content: $content, image: $image)';
+    return 'Glance(publisher: $publisher, content: $content, profileImage: $profileImage, image: $image)';
   }
 
   @override
@@ -141,12 +160,15 @@ class _$_Glance implements _Glance {
             (identical(other.publisher, publisher) ||
                 other.publisher == publisher) &&
             (identical(other.content, content) || other.content == content) &&
+            (identical(other.profileImage, profileImage) ||
+                other.profileImage == profileImage) &&
             (identical(other.image, image) || other.image == image));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, publisher, content, image);
+  int get hashCode =>
+      Object.hash(runtimeType, publisher, content, profileImage, image);
 
   @JsonKey(ignore: true)
   @override
@@ -166,6 +188,7 @@ abstract class _Glance implements Glance {
   factory _Glance(
       {required final String publisher,
       required final String content,
+      required final String profileImage,
       final String? image}) = _$_Glance;
 
   factory _Glance.fromJson(Map<String, dynamic> json) = _$_Glance.fromJson;
@@ -174,6 +197,8 @@ abstract class _Glance implements Glance {
   String get publisher;
   @override
   String get content;
+  @override
+  String get profileImage;
   @override // required DateTime publishedAt,
   String? get image;
   @override
