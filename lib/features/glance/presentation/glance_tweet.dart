@@ -22,15 +22,15 @@ class GlanceTweet extends StatelessWidget {
           padding: const EdgeInsets.only(left: 24),
           child: Row(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 40,
                 width: 40,
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
-                      image: AssetImage(
-                        'assets/images/img-test.jpg',
+                      image: CachedNetworkImageProvider(
+                        glanceData.profileImage,
                       ),
                       fit: BoxFit.cover,
                     ),

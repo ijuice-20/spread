@@ -25,6 +25,7 @@ mixin _$Reads {
   String get heading => throw _privateConstructorUsedError;
   String get newsImage => throw _privateConstructorUsedError;
   String get publisher => throw _privateConstructorUsedError;
+  String get profileImage => throw _privateConstructorUsedError;
   String get tag => throw _privateConstructorUsedError;
   List<String> get summary => throw _privateConstructorUsedError;
 
@@ -44,6 +45,7 @@ abstract class $ReadsCopyWith<$Res> {
       String heading,
       String newsImage,
       String publisher,
+      String profileImage,
       String tag,
       List<String> summary});
 }
@@ -66,6 +68,7 @@ class _$ReadsCopyWithImpl<$Res, $Val extends Reads>
     Object? heading = null,
     Object? newsImage = null,
     Object? publisher = null,
+    Object? profileImage = null,
     Object? tag = null,
     Object? summary = null,
   }) {
@@ -89,6 +92,10 @@ class _$ReadsCopyWithImpl<$Res, $Val extends Reads>
       publisher: null == publisher
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
+              as String,
+      profileImage: null == profileImage
+          ? _value.profileImage
+          : profileImage // ignore: cast_nullable_to_non_nullable
               as String,
       tag: null == tag
           ? _value.tag
@@ -114,6 +121,7 @@ abstract class _$$_ReadsCopyWith<$Res> implements $ReadsCopyWith<$Res> {
       String heading,
       String newsImage,
       String publisher,
+      String profileImage,
       String tag,
       List<String> summary});
 }
@@ -132,6 +140,7 @@ class __$$_ReadsCopyWithImpl<$Res> extends _$ReadsCopyWithImpl<$Res, _$_Reads>
     Object? heading = null,
     Object? newsImage = null,
     Object? publisher = null,
+    Object? profileImage = null,
     Object? tag = null,
     Object? summary = null,
   }) {
@@ -156,6 +165,10 @@ class __$$_ReadsCopyWithImpl<$Res> extends _$ReadsCopyWithImpl<$Res, _$_Reads>
           ? _value.publisher
           : publisher // ignore: cast_nullable_to_non_nullable
               as String,
+      profileImage: null == profileImage
+          ? _value.profileImage
+          : profileImage // ignore: cast_nullable_to_non_nullable
+              as String,
       tag: null == tag
           ? _value.tag
           : tag // ignore: cast_nullable_to_non_nullable
@@ -177,6 +190,7 @@ class _$_Reads implements _Reads {
       required this.heading,
       required this.newsImage,
       required this.publisher,
+      required this.profileImage,
       required this.tag,
       required final List<String> summary})
       : _summary = summary;
@@ -195,6 +209,8 @@ class _$_Reads implements _Reads {
   @override
   final String publisher;
   @override
+  final String profileImage;
+  @override
   final String tag;
   final List<String> _summary;
   @override
@@ -206,7 +222,7 @@ class _$_Reads implements _Reads {
 
   @override
   String toString() {
-    return 'Reads(author: $author, content: $content, heading: $heading, newsImage: $newsImage, publisher: $publisher, tag: $tag, summary: $summary)';
+    return 'Reads(author: $author, content: $content, heading: $heading, newsImage: $newsImage, publisher: $publisher, profileImage: $profileImage, tag: $tag, summary: $summary)';
   }
 
   @override
@@ -221,14 +237,24 @@ class _$_Reads implements _Reads {
                 other.newsImage == newsImage) &&
             (identical(other.publisher, publisher) ||
                 other.publisher == publisher) &&
+            (identical(other.profileImage, profileImage) ||
+                other.profileImage == profileImage) &&
             (identical(other.tag, tag) || other.tag == tag) &&
             const DeepCollectionEquality().equals(other._summary, _summary));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, author, content, heading,
-      newsImage, publisher, tag, const DeepCollectionEquality().hash(_summary));
+  int get hashCode => Object.hash(
+      runtimeType,
+      author,
+      content,
+      heading,
+      newsImage,
+      publisher,
+      profileImage,
+      tag,
+      const DeepCollectionEquality().hash(_summary));
 
   @JsonKey(ignore: true)
   @override
@@ -251,6 +277,7 @@ abstract class _Reads implements Reads {
       required final String heading,
       required final String newsImage,
       required final String publisher,
+      required final String profileImage,
       required final String tag,
       required final List<String> summary}) = _$_Reads;
 
@@ -266,6 +293,8 @@ abstract class _Reads implements Reads {
   String get newsImage;
   @override
   String get publisher;
+  @override
+  String get profileImage;
   @override
   String get tag;
   @override

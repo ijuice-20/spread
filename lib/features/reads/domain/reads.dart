@@ -11,6 +11,7 @@ class Reads with _$Reads {
     required String heading,
     required String newsImage,
     required String publisher,
+    required String profileImage,
     required String tag,
     required List<String> summary,
   }) = _Reads;
