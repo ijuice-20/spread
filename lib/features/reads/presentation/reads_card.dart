@@ -252,7 +252,7 @@ class Publisher extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
               image: DecorationImage(
-                image: CachedNetworkImageProvider(readsData.profileImage),:
+                image: CachedNetworkImageProvider(readsData.profileImage),
                 fit: BoxFit.cover,
               ),
             ),
