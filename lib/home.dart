@@ -36,96 +36,93 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: const Color(
         0xFFF8F8F8,
       ),
-      bottomNavigationBar: SizedBox(
-        height: 80,
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          unselectedLabelStyle: plusJakartaSansRegular12,
-          selectedLabelStyle: plusJakartaSansRegular14,
-          showUnselectedLabels: true,
-          unselectedItemColor: const Color(0xFF969696),
-          selectedItemColor: const Color(0xFF5364FF),
-          currentIndex: _selectedIndex,
-          onTap: _onItemTapped,
-          items: [
-            BottomNavigationBarItem(
-              label: 'Glance',
-              icon: Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: SvgPicture.asset(
-                  'assets/icons/ic-glance.svg',
-                  height: 20,
-                  width: 20,
-                ),
-              ),
-              activeIcon: Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: SvgPicture.asset(
-                  'assets/icons/ic-glance-selected.svg',
-                  height: 20,
-                  width: 20,
-                ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        unselectedLabelStyle: plusJakartaSansRegular12,
+        selectedLabelStyle: plusJakartaSansRegular14,
+        showUnselectedLabels: true,
+        unselectedItemColor: const Color(0xFF969696),
+        selectedItemColor: const Color(0xFF5364FF),
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: [
+          BottomNavigationBarItem(
+            label: 'Glance',
+            icon: Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: SvgPicture.asset(
+                'assets/icons/ic-glance.svg',
+                height: 20,
+                width: 20,
               ),
             ),
-            BottomNavigationBarItem(
-              label: 'Reads',
-              icon: Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: SvgPicture.asset(
-                  'assets/icons/ic-read.svg',
-                  height: 20,
-                  width: 20,
-                ),
-              ),
-              activeIcon: Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: SvgPicture.asset(
-                  'assets/icons/ic-read-selected.svg',
-                  height: 20,
-                  width: 20,
-                ),
+            activeIcon: Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: SvgPicture.asset(
+                'assets/icons/ic-glance-selected.svg',
+                height: 20,
+                width: 20,
               ),
             ),
-            BottomNavigationBarItem(
-              label: 'Events',
-              icon: Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: SvgPicture.asset(
-                  'assets/icons/ic-events.svg',
-                  height: 20,
-                  width: 20,
-                ),
-              ),
-              activeIcon: Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: SvgPicture.asset(
-                  'assets/icons/ic-events-selected.svg',
-                  height: 20,
-                  width: 20,
-                ),
+          ),
+          BottomNavigationBarItem(
+            label: 'Reads',
+            icon: Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: SvgPicture.asset(
+                'assets/icons/ic-read.svg',
+                height: 20,
+                width: 20,
               ),
             ),
-            BottomNavigationBarItem(
-              label: 'Learn',
-              icon: Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: SvgPicture.asset(
-                  'assets/icons/ic-read.svg',
-                  height: 20,
-                  width: 20,
-                ),
-              ),
-              activeIcon: Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: SvgPicture.asset(
-                  'assets/icons/ic-read-selected.svg',
-                  height: 20,
-                  width: 20,
-                ),
+            activeIcon: Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: SvgPicture.asset(
+                'assets/icons/ic-read-selected.svg',
+                height: 20,
+                width: 20,
               ),
             ),
-          ],
-        ),
+          ),
+          BottomNavigationBarItem(
+            label: 'Events',
+            icon: Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: SvgPicture.asset(
+                'assets/icons/ic-events.svg',
+                height: 20,
+                width: 20,
+              ),
+            ),
+            activeIcon: Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: SvgPicture.asset(
+                'assets/icons/ic-events-selected.svg',
+                height: 20,
+                width: 20,
+              ),
+            ),
+          ),
+          BottomNavigationBarItem(
+            label: 'Learn',
+            icon: Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: SvgPicture.asset(
+                'assets/icons/ic-read.svg',
+                height: 20,
+                width: 20,
+              ),
+            ),
+            activeIcon: Padding(
+              padding: const EdgeInsets.only(bottom: 4),
+              child: SvgPicture.asset(
+                'assets/icons/ic-read-selected.svg',
+                height: 20,
+                width: 20,
+              ),
+            ),
+          ),
+        ],
       ),
       body: _widgetOptions[_selectedIndex],
     );
